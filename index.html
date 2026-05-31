@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mai Phương Get Key</title>
+
+<style>
+body{
+    background:#ffe6f2;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    padding-top:100px;
+}
+
+.box{
+    background:white;
+    width:350px;
+    margin:auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#ff4da6;
+}
+
+button{
+    background:#ff4da6;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#keyBox{
+    display:none;
+    margin-top:20px;
+    padding:10px;
+    background:#f7f7f7;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>🌸 Mai Phương Get Key 🌸</h1>
+
+    <p>Nhấn nút bên dưới để nhận key.</p>
+
+    <button onclick="showKey()">Lấy Key</button>
+
+    <div id="keyBox">
+        <h3>Key của bạn:</h3>
+        <p id="key"></p>
+    </div>
+</div>
+
+<script>
+function showKey() {
+    let key = "MAIPHUONG-" + Math.random().toString(36).substring(2,8).toUpperCase();
+
+    document.getElementById("key").innerText = key;
+    document.getElementById("keyBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
