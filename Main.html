@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mai Phương Get Key</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:600px;
+    background:#111827;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(255,20,147,.3);
+}
+
+h1{
+    color:#ff4da6;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+.keybox{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.key{
+    color:#4ade80;
+    font-size:24px;
+    font-weight:bold;
+    word-break:break-all;
+    margin-top:10px;
+}
+
+.copy{
+    margin-top:20px;
+    background:#ff1493;
+    border:none;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.copy:hover{
+    opacity:.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Mai Phương</h1>
+
+<p class="subtitle">
+Hệ thống Get Key tự động 24h
+</p>
+
+<div class="keybox">
+    <h2>🔑 Key của bạn</h2>
+    <div class="key" id="key"></div>
+
+    <button class="copy" onclick="copyKey()">
+        Sao chép Key
+    </button>
+</div>
+
+</div>
+
+<script>
+
+let key = localStorage.getItem("maiphuong_key");
+
+if(!key){
+
+    key =
+    "MP-" +
+    Math.random().toString(36).substring(2,6).toUpperCase() +
+    "-" +
+    Math.random().toString(36).substring(2,6).toUpperCase();
+
+    localStorage.setItem("maiphuong_key", key);
+}
+
+document.getElementById("key").innerText = key;
+
+function copyKey(){
+    navigator.clipboard.writeText(key);
+    alert("Đã sao chép key!");
+}
+
+</script>
+
+</body>
+</html>
