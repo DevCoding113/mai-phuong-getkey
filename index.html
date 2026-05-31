@@ -7,68 +7,67 @@
 
 <style>
 body{
-    background:#ffe6f2;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    padding-top:100px;
+background:#0f172a;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+margin:0;
 }
 
 .box{
-    background:white;
-    width:350px;
-    margin:auto;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.1);
+width:500px;
+max-width:90%;
+background:#111827;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 25px rgba(255,20,147,.3);
 }
 
 h1{
-    color:#ff4da6;
+color:#ff4da6;
+font-size:42px;
+margin-bottom:10px;
 }
 
-button{
-    background:#ff4da6;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-#keyBox{
-    display:none;
-    margin-top:20px;
-    padding:10px;
-    background:#f7f7f7;
-    border-radius:10px;
+.btn{
+display:inline-block;
+padding:15px 25px;
+background:#ff1493;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+margin-top:20px;
 }
 </style>
 </head>
-
 <body>
 
 <div class="box">
-    <h1>🌸 Mai Phương Get Key 🌸</h1>
 
-    <p>Nhấn nút bên dưới để nhận key.</p>
+<h1>Mai Phương</h1>
 
-    <button onclick="showKey()">Lấy Key</button>
+<h3>Hệ thống Get Key tự động 24h</h3>
 
-    <div id="keyBox">
-        <h3>Key của bạn:</h3>
-        <p id="key"></p>
-    </div>
+<hr>
+
+<h2>✅ TẠO LINK THÀNH CÔNG</h2>
+
+<p>Link của bạn đã sẵn sàng</p>
+
+<a class="btn" href="getkey.html">
+BẤM VÀO ĐÂY ĐỂ VƯỢT LINK
+</a>
+
+<p style="margin-top:20px">
+Vượt mã liên kết xong bạn sẽ nhận được Key.
+</p>
+
 </div>
-
-<script>
-function showKey() {
-    let key = "MAIPHUONG-" + Math.random().toString(36).substring(2,8).toUpperCase();
-
-    document.getElementById("key").innerText = key;
-    document.getElementById("keyBox").style.display = "block";
-}
-</script>
 
 </body>
 </html>
