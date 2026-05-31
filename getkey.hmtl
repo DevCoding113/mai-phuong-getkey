@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhận Key</title>
+
+<style>
+body{
+background:#0f172a;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+margin:0;
+}
+
+.box{
+width:500px;
+max-width:90%;
+background:#111827;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 25px rgba(255,20,147,.3);
+}
+
+h1{
+color:#ff4da6;
+}
+
+.key{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+word-break:break-all;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h1>Mai Phương Get Key</h1>
+
+<p>Key của bạn:</p>
+
+<div class="key" id="key"></div>
+
+</div>
+
+<script>
+let key = localStorage.getItem("maiphuong_key");
+
+if(!key){
+
+key =
+"MP-" +
+Math.random().toString(36).substring(2,6).toUpperCase() +
+"-" +
+Math.random().toString(36).substring(2,6).toUpperCase();
+
+localStorage.setItem("maiphuong_key",key);
+
+}
+
+document.getElementById("key").innerText = key;
+</script>
+
+</body>
+</html>
